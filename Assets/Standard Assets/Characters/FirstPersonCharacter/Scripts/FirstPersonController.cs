@@ -59,6 +59,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             transform.Find("Addons").gameObject.SetActive(false);
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
+            m_Camera.transform.rotation = Quaternion.Euler(Vector3.zero);
             m_Camera.transform.parent = photonView.transform;
             m_Camera.transform.localPosition = new Vector3(0, 0.8f, 0);
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
