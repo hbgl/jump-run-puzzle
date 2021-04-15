@@ -750,6 +750,8 @@ GameObject:
   - component: {fileID: 4384139947514618365}
   - component: {fileID: 7080663912990403718}
   - component: {fileID: 7106218547088214167}
+  - component: {fileID: 7448541520614834481}
+  - component: {fileID: 882166561}
   m_Layer: 3
   m_Name: PlayerCC
   m_TagString: Untagged
@@ -877,7 +879,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 7080663912990403718}
-  sceneViewId: 0
+  sceneViewId: 2
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!114 &7080663912990403718
@@ -910,6 +912,41 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7448541520614834481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415811181908610699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a757b4688fd88834580759ef5631896e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDist: 10
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 16
+  previewPrefab: {fileID: 2789811693021708533, guid: dfdfd3654956bfd4f9f228b3d3926c5c, type: 3}
+  iceblockPrefab: {fileID: 8266004988384461810, guid: 850371aa137434e46b56304a48231b2c, type: 3}
+--- !u!114 &882166561
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5415811181908610699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d50cb984f5fdfa47bfbd2e1c18ef490, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxDist: 10
+  attractionForce: 10
+  interactionLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &5415811182212970415
 GameObject:
   m_ObjectHideFlags: 0

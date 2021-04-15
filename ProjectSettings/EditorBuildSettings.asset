@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoAsteroids/Scenes/DemoAsteroids-GameScene.unity
     guid: 98efc37d6307844488eb3e4247dde7e9
-  - enabled: 1
+  - enabled: 0
     path: Assets/Multiplayer/TestLab/Scenes/Launcher.unity
     guid: 30516981c7a546f46bbbf945c0699df1
   - enabled: 1

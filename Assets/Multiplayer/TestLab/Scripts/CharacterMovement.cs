@@ -48,6 +48,18 @@ public class CharacterMovement : MonoBehaviourPun
         //}
 
         // Camera Movement
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            if(Cursor.lockState == CursorLockMode.Locked)
+            {
+                Cursor.lockState = CursorLockMode.None;
+            } else
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+        }
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
