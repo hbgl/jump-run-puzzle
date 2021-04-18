@@ -112,5 +112,5 @@ MonoBehaviour:
   denyMaterial: {fileID: 2100000, guid: 9ae8b2b98a8f51c498d0b8db79a7f4ec, type: 2}
   layerMask:
     serializedVersion: 2
-    m_Bits: 84
+    m_Bits: 148
   canPlace: 0
