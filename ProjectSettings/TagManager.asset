@@ -6,14 +6,18 @@ TagManager:
   tags:
   - JumpPad
   - SeesawPad
+  - PanelMain
+  - Water
+  - Freezable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Ground
+  - Freezable
   - 
   - 
   - 
