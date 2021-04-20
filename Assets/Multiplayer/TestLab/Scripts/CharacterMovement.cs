@@ -5,11 +5,14 @@ using Photon.Pun;
 
 public class CharacterMovement : MonoBehaviourPun
 {
-    public float mouseSensitivity = 1000f;
+    public float mouseSensitivity = 200f;
     public CharacterController controller;
     public float speed = 8f;
     public float gravity = -9.81f;
     public float jumpHeight = 3f;
+
+    public GameObject addons;
+    public GameObject skills;
 
 
     public GameObject playerUI;
@@ -22,30 +25,36 @@ public class CharacterMovement : MonoBehaviourPun
     // Start is called before the first frame update
     void Start()
     {
-        GameObject nameUI = Instantiate(playerUI);
-        nameUI.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
+        // GameObject nameUI = Instantiate(playerUI);
+        // nameUI.SendMessage("SetTarget", this, SendMessageOptions.RequireReceiver);
 
-        //if (!photonView.IsMine)
-        //{
-        //    return;
-        //}
-        transform.Find("Addons").gameObject.SetActive(false);
+        if (!photonView.IsMine)
+        {
+            return;
+        }
+        addons.SetActive(false);
 
+        GetComponent<FreezeGun>().enabled = true;
+        GetComponent<Magnet>().enabled = true;
         // Camera Setup for the Player
         cam = Camera.main;
         cam.transform.parent = transform;
         cam.transform.rotation = Quaternion.Euler(Vector3.zero);
         cam.transform.localPosition = new Vector3(0, 0.6f, 0);
+
+        skills.transform.parent = cam.transform;
+        skills.transform.localPosition = Vector3.zero;
+
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (!photonView.IsMine)
-        //{
-        //    return;
-        //}
+        if (!photonView.IsMine)
+        {
+            return;
+        }
 
         // Camera Movement
 
@@ -60,8 +69,8 @@ public class CharacterMovement : MonoBehaviourPun
             }
         }
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);

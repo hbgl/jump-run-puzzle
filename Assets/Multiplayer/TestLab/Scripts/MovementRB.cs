@@ -6,7 +6,7 @@ using Photon.Pun;
 public class MovementRB : MonoBehaviourPun
 {
     public Rigidbody player;
-    public float mouseSensitivity = 1000f;
+    public float mouseSensitivity = 200f;
     public GameObject cubePrefab;
 
     private Camera cam;
@@ -80,8 +80,8 @@ public class MovementRB : MonoBehaviourPun
         //    }
 
 
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
