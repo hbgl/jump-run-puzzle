@@ -57,7 +57,7 @@ public class CharacterMovement : MonoBehaviourPun, ISeesawAgent
         Camera.transform.rotation = Quaternion.Euler(Vector3.zero);
         Camera.transform.localPosition = new Vector3(0, 0.6f, 0);
 
-        skills.transform.parent = cam.transform;
+        skills.transform.parent = Camera.transform;
         skills.transform.localPosition = Vector3.zero;
 
         Controller = gameObject.GetComponent<CharacterController>();
