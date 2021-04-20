@@ -4,6 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - JumpPad
+  - SeesawPad
   - PanelMain
   - Water
   - Freezable
@@ -14,6 +16,7 @@ TagManager:
   - Player
   - Water
   - UI
+  - Ground
   - Freezable
   - 
   - 
