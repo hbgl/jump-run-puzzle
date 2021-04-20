@@ -13,6 +13,10 @@ public class CharacterMovement : MonoBehaviourPun, ISeesawAgent
     public float JumpHeight = 1.0f;
     public float JumpPadJumpHeight = 5.0f;
     public float Gravity = -12f;
+    [Range(0f, 10f)]
+    public float GravityJumpFactor = 2.0f;
+    [Range(0f, 10f)]
+    public float GravityFallFactor = 2.0f;
     public float TurnSmoothTime = 0.1f;
     public float PushPower = 2.0f;
     public float Mass = 50f;
@@ -144,20 +148,20 @@ public class CharacterMovement : MonoBehaviourPun, ISeesawAgent
         else if (SeesawJumpHeight >= 0.5f)
         {
             // Get pushed up by the other agent.
-            velocity.y += Mathf.Sqrt(SeesawJumpHeight * -2.0f * Gravity);
+            velocity.y += Mathf.Sqrt(SeesawJumpHeight * -GravityJumpFactor * Gravity);
             SeesawJumpHeight = 0f;
         }
         else if (Input.GetButton("Jump") && IsOnJumpPad)
         {
             // Get boost on jump pad.
-            velocity.y = Mathf.Sqrt(JumpPadJumpHeight * -2.0f * Gravity);
+            velocity.y = Mathf.Sqrt(JumpPadJumpHeight * -GravityJumpFactor * Gravity);
         }
         else if (Input.GetButtonDown("Jump") && isGrounded)
         {
             // Normal jump.
-            velocity.y = Mathf.Sqrt(JumpHeight * -2.0f * Gravity);
+            velocity.y = Mathf.Sqrt(JumpHeight * -GravityJumpFactor * Gravity);
         }
-        velocity.y += Gravity * Time.deltaTime;
+        velocity.y += Gravity * GravityFallFactor * Time.deltaTime;
 
         Collisions.Clear();
 
