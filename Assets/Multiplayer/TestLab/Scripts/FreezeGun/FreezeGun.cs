@@ -8,10 +8,13 @@ public class FreezeGun : MonoBehaviour
     public float maxDist;
     public LayerMask interactionLayer;
     public GameObject previewPrefab;
+    public Animator animator;
 
     private GameObject preview;
     private bool showPreview;
     private RaycastHit hit;
+
+    private bool wandIsActive;
 
     // Start is called before the first frame update
     void Start()
@@ -24,9 +27,12 @@ public class FreezeGun : MonoBehaviour
     void Update()
     {
         showPreview = false;
+        wandIsActive = false;
 
         if (Input.GetKey(KeyCode.Mouse1))
         {
+            wandIsActive = true;
+
             Ray ray = Camera.main.ViewportPointToRay(Vector3.one * 0.5f);
             Debug.DrawRay(ray.origin, ray.direction * maxDist, Color.green);
             if (Physics.Raycast(ray, out hit, maxDist, interactionLayer))
@@ -57,5 +63,7 @@ public class FreezeGun : MonoBehaviour
                 preview.SetActive(false);
             }
         }
+
+        animator.SetBool("wandIsActive", wandIsActive);
     }
 }
