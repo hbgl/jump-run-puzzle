@@ -5120,14 +5120,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b04f6918b2726bd499a2cd86730b0703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 5
-  controller: {fileID: 4116751233222902696}
-  speed: 8
-  gravity: -20
-  jumpHeight: 3
   addons: {fileID: 4116751232853923792}
   skills: {fileID: 8217223223243259224}
-  playerUI: {fileID: 5936857668950277852, guid: 1d488172ccbddfc488a473ea5b2d10e5, type: 3}
+  MouseSensitivity: 10
+  PlayerUI: {fileID: 0}
+  Speed: 6
+  JumpHeight: 5
+  JumpPadJumpHeight: 5
+  Gravity: -12
+  GravityJumpFactor: 2
+  GravityFallFactor: 2
+  TurnSmoothTime: 0.1
+  PushPower: 2
+  Mass: 50
+  SeesawLegJumpHeight: 3
 --- !u!114 &5683235905223142620
 MonoBehaviour:
   m_ObjectHideFlags: 0
