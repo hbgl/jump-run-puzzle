@@ -9,6 +9,12 @@ TagManager:
   - PanelMain
   - Water
   - Freezable
+  - Preview
+  - Wind
+  - Fire
+  - FreezePushable
+  - Button
+  - LevelClear
   layers:
   - Default
   - TransparentFX
@@ -18,11 +24,10 @@ TagManager:
   - UI
   - Ground
   - Freezable
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ignore Fire
+  - Special Collider
+  - Special Collider Other
+  - Special Collider Water
   - 
   - 
   - 
