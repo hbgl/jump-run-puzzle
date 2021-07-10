@@ -83,10 +83,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         {
             DebugAllSkills();
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            DebugMagnet();
-        }
         else if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             RaiseEventOptions raiseEventOptions = new RaiseEventOptions { Receivers = ReceiverGroup.All }; // You would have to set the Receivers to All in order to receive this event on the local client as well
@@ -119,11 +115,6 @@ public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
         gui.AddItem(PowerupType.Hand);
         gui.AddItem(PowerupType.Glider);
         gui.AddItem(PowerupType.Icewand);
-        gui.AddItem(PowerupType.Magnet);
-    }
-
-    private void DebugMagnet()
-    {
         gui.AddItem(PowerupType.Magnet);
     }
 
